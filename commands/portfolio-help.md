@@ -19,6 +19,7 @@ Display the following usage guide:
 |---------|------------|--------------|
 | `/portfolio setup` | First time only | Configure repo path, language, author |
 | `/portfolio log` | After each session | Capture session data as raw JSON |
+| `/portfolio plan` | Before writing a post | Interactive blog post planning |
 | `/portfolio generate` | When you want new content | Generate draft posts → PR |
 | `/portfolio status` | Check inventory | Show pending/processed raw logs |
 | `/portfolio wrap` | Session end (recommended) | /wrap + /portfolio log combined |
