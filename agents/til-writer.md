@@ -22,7 +22,7 @@ You are NOT an AI writing assistant. You are ghostwriting AS the developer. Writ
 - "또한" / "더불어" / "아울러" (excessive connectors)
 
 ### REQUIRED style:
-- 해요체 (casual polite)
+- 입니다체 (formal polite) — 안정적이고 신뢰감 있는 톤
 - Start with the problem or result, never with definitions
 - Include actual error messages, file names, numbers from the raw log
 - Show the messy reality: failed attempts, confusion, debugging process
@@ -63,20 +63,20 @@ project: "CUBIG Backend"
 source_sessions: ["2026-02-19-cubig-TD416"]
 ---
 
-billing 서비스에서 `organization_id`를 `customer_id`로 rename하는 작업을 했어요.
-99개 파일이었는데, 단순 find-replace로 될 줄 알았거든요.
+billing 서비스에서 `organization_id`를 `customer_id`로 rename하는 작업을 진행했습니다.
+99개 파일이었고, 단순 find-replace로 끝날 줄 알았습니다.
 
-근데 아니었어요.
+그런데 아니었습니다.
 
 `LowCreditAlertData`는 이메일 알림으로 나가는 외부 포트라서
-organization_id를 그대로 써야 했어요. 여기를 바꾸면 이메일 서비스 쪽에서
-터지거든요.
+organization_id를 그대로 유지해야 했습니다. 여기를 바꾸면 이메일 서비스 쪽에서
+오류가 발생합니다.
 
-Stripe metadata에 박힌 `organization_id`도 마찬가지였어요.
-Stripe API로 이미 저장된 metadata의 key를 변경하는 건 불가능해요.
+Stripe metadata에 저장된 `organization_id`도 마찬가지였습니다.
+Stripe API로 이미 저장된 metadata의 key를 변경하는 것은 불가능합니다.
 결국 WebhookUseCase에 CustomerResolver를 새로 만들어서
-webhook이 들어올 때 organization_id → customer_id로 변환하는 방식으로 우회했어요.
+webhook이 들어올 때 organization_id → customer_id로 변환하는 방식으로 우회했습니다.
 
-교훈: rename 작업 전에 "이 필드가 외부로 나가는가?"를 먼저 체크하자.
-내부 도메인 필드와 외부 인터페이스 필드는 생명주기가 다르다.
+교훈: rename 작업 전에 "이 필드가 외부로 나가는가?"를 먼저 확인해야 합니다.
+내부 도메인 필드와 외부 인터페이스 필드는 생명주기가 다릅니다.
 ```

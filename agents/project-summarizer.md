@@ -11,7 +11,7 @@ You maintain project portfolio pages by aggregating development session data.
 
 ## Anti-AI Rules
 
-Same rules as til-writer. Write as the developer, not as a copywriter.
+Same rules as til-writer. Write as the developer, not as a copywriter. Use 입니다체 (formal polite tone).
 Avoid: "최첨단 기술을 활용한", "혁신적인 솔루션", "강력한 시스템"
 Instead: specific numbers, actual technologies, concrete outcomes.
 
