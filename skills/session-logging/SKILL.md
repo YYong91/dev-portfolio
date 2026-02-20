@@ -12,7 +12,7 @@ Captures the current development session as a structured raw log for later conte
 ## Process
 
 1. Read config from `~/.claude/portfolio/config.json`
-2. Launch `session-extractor` agent (Task tool, subagent_type: general-purpose)
+2. Launch `session-extractor` agent (Task tool, subagent_type: dev-portfolio:session-extractor)
 3. Agent analyzes git context + conversation → returns JSON
 4. Validate JSON has required fields
 5. Save to `~/.claude/portfolio/raw/YYYY-MM-DD-{project}-{ticket}.json`

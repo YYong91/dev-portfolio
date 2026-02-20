@@ -4,5 +4,9 @@
   "version": "0.1.0",
   "author": {
     "name": "YYong91"
-  }
+  },
+  "repository": "https://github.com/YYong91/dev-portfolio",
+  "homepage": "https://github.com/YYong91/dev-portfolio",
+  "license": "MIT",
+  "keywords": ["portfolio", "blog", "til", "session-logging", "content-generation"]
 }

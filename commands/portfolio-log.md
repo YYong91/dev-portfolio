@@ -20,7 +20,7 @@ Follow the session-logging skill (skills/session-logging/SKILL.md).
    git diff --stat origin/develop..HEAD 2>/dev/null || git diff --stat HEAD~3..HEAD
    ```
 
-3. **Extract session data**: Launch `session-extractor` agent via Task tool.
+3. **Extract session data**: Launch `session-extractor` agent via Task tool (subagent_type: dev-portfolio:session-extractor).
    The agent has access to the full conversation context and will produce structured JSON.
 
 4. **Let user review**: Show the extracted raw log summary:

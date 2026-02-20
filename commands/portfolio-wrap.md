@@ -1,6 +1,6 @@
 ---
 description: Combined session wrap-up — runs session-wrap analysis then captures portfolio raw log. Use instead of /wrap when you want both.
-allowed-tools: Bash, Read, Write, Glob, Grep, Task, AskUserQuestion, Skill
+allowed-tools: Bash, Read, Write, Glob, Grep, Task, AskUserQuestion
 ---
 
 # /portfolio wrap
