@@ -5,26 +5,28 @@
 
 ## 설치
 
-### 방법 1: 로컬 디렉토리에서 설치 (권장)
+### 방법 1: 로컬 마켓플레이스로 설치 (권장)
 
 ```bash
 git clone https://github.com/YYong91/dev-portfolio.git
 ```
 
-Claude Code 설정(`~/.claude/settings.json`)에 플러그인 디렉토리 등록:
-```json
-{
-  "pluginDirectories": ["/path/to/dev-portfolio"]
-}
+Claude Code에서 아래 커맨드를 순서대로 실행:
+
+```
+/plugin marketplace add /path/to/dev-portfolio
+/plugin install dev-portfolio@YYong91-plugins
 ```
 
-Claude Code를 재시작하면 `/portfolio:*` 커맨드가 활성화됩니다.
+이후 Claude Code를 재시작하면 `/portfolio:*` 커맨드가 활성화됩니다.
 
-### 방법 2: 개발 중 테스트
+### 방법 2: 세션 단위 로드 (설치 없이 테스트)
 
 ```bash
 claude --plugin-dir /path/to/dev-portfolio
 ```
+
+해당 세션에서만 플러그인이 활성화됩니다.
 
 ## 커맨드
 
@@ -58,7 +60,10 @@ claude --plugin-dir /path/to/dev-portfolio
 
 ```
 dev-portfolio/
-├── skills/         # Claude Code 스킬 파일 (커맨드 동작 정의)
+├── .claude-plugin/
+│   ├── plugin.json        # 플러그인 메타데이터 (이름, 버전, 작성자)
+│   └── marketplace.json   # 로컬 마켓플레이스 카탈로그
+├── skills/                # 커맨드 동작 정의 (스킬 파일)
 │   ├── portfolio-log.md
 │   ├── portfolio-generate.md
 │   ├── portfolio-plan.md
@@ -66,13 +71,13 @@ dev-portfolio/
 │   ├── portfolio-setup.md
 │   ├── portfolio-status.md
 │   └── portfolio-help.md
-├── agents/         # 콘텐츠 생성 에이전트
+├── agents/                # 콘텐츠 생성 에이전트
 │   ├── claude-exp-writer.md   # Claude 경험 블로그 포스트 작성
 │   ├── til-writer.md          # TIL 포스트 작성
 │   ├── project-summarizer.md  # 프로젝트 요약 업데이트
 │   ├── session-extractor.md   # 세션 데이터 추출
 │   └── resume-crafter.md      # 이력서 bullet 생성
-├── commands/       # 커맨드 진입점
+├── commands/              # 커맨드 진입점
 └── README.md
 ```
 
